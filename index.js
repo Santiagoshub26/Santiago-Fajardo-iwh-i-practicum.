@@ -23,11 +23,11 @@ app.get('/update-cobj', async (req, res) => {
 app.post('/update-cobj', async (req, res) => {
     const newEntity = {
         properties: {
-            "custom_prop_1": req.body.new_property,
+            "name": req.body.new_property,
             // Add your other properties here
         }
     }
-    const createObj = `https://api.hubapi.com/crm/v3/objects/2-YOUR_OBJ_ID`;
+    const createObj = `https://api.hubapi.com/crm/v3/objects/2-201001661`;
     const headers = {
         Authorization: `Bearer ${process.env.PRIVATE_APP_ACCESS_TOKEN}`,
         'Content-Type': 'application/json'
@@ -44,9 +44,9 @@ app.post('/update-cobj', async (req, res) => {
 
 // * Code for Route 3 goes here
 app.get('/', async (req, res) => {
-    const objects = 'https://api.hubapi.com/crm/v3/objects/2-YOUR_OBJ_ID?properties=custom_prop_1,custom_prop_2';
+    const objects = 'https://api.hubapi.com/crm/v3/objects/2-201001661?properties=name,console;
     const headers = {
-        Authorization: `Bearer ${process.env.PRIVATE_APP_ACCESS_TOKEN}`,
+        Authorization: `Bearer ${process.env.pat-eu1-a252d2a5-dce7-410f-b707-ec137c4bb08b}`,
         'Content-Type': 'application/json'
     };
     try {
